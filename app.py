@@ -113,23 +113,23 @@ if st.button("🔮 Predict Performance"):
         sample_papers
     ]], columns=X.columns)
 
+    
     prediction = model.predict(new_student)[0]
 
     st.subheader("📊 Prediction Result")
-
-st.success(
-    f"Predicted Performance Index: {prediction:.2f}"
-)
-
-if prediction >= 75:
-    st.info("Performance Level: High")
-elif prediction >= 50:
-    st.info("Performance Level: Moderate")
-else:
-    st.info("Performance Level: Needs Improvement")(
-        f"📊 Predicted Performance Index: {prediction:.2f}"
+    st.success(
+        f"Predicted Performance Index: {prediction:.2f}"
     )
+
+    if prediction >= 75:
+        st.info("Performance Level: High")
+    elif prediction >= 50:
+        st.info("Performance Level: Moderate")
+    else:
+        st.info("Performance Level: Needs Improvement")
+
     st.divider()
+
 
 st.subheader("📈 Model Comparison")
 
